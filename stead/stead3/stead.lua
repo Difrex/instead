@@ -1769,6 +1769,9 @@ std.world = std.class({
 	end;
 	cmd = function(s, cmd)
 		local r, v
+		if not s.player then
+			std.err("No player object.", 2)
+		end
 		s.player:moved(false)
 		s.player:need_scene(false)
 		std.abort_cmd = false
